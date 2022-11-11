@@ -9,10 +9,12 @@ state = {
   meat : 0 , 
 }
 
-price = {
-  Price : 0
-}
-totalPrice = ()=>{
+
+
+
+totalPrice = ()=>{ 
+    console.log(this.state.lettuce) ; 
+
  let Price = this.state.lettuce + this.state.tomato + this.state.cheese + this.state.meat ; 
       this.setPrice({[Price]:Price})
 }
@@ -55,6 +57,8 @@ handleChange = (action,ingredient)=>{
      this.setState({
       [ingredient] : stateValue >= 0 ? stateValue : 0
      })
+
+     this.totalPrice(); 
 }
 
 burgerContent = () =>{
@@ -150,7 +154,7 @@ for(let i = 0 ; i< meat ; i++){
 
   <div className = "show-details">
     <div className = "details-box">
-     
+       <p>Quantity</p>
     </div>
     <div className = "details-box">
     <p>Total Price</p>
