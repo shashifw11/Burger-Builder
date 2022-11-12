@@ -240,7 +240,7 @@ useEffect(()=>{
   <div className = "show-details">
     <div className = "details-box">
       <div className = "qan-box"> 
-         <p>Each Burger Slide Quantity</p>
+         <p style = {{marginLeft : "5px"}}>Each Burger Slide Quantity</p>
          <p style = {{fontSize : "18px"}}><span >{quantity}</span> <span>Pieces</span></p>
       </div>
       <button  className = "qan-box">

@@ -234,7 +234,8 @@
     border-radius: 10px;
     cursor: pointer;
     border: none;
-    background-color :lightskyblue ; 
+    background-color :cornflowerblue; 
+    color:white ; 
     font-weight: bold;
     
 } 
@@ -242,9 +243,6 @@
 .clear-all:hover{
    padding :13px ; 
    width : 74% ; 
-   background-color :cornflowerblue; 
-   color: white;
-   font-weight: bold;
 }
   .qan-box{
      width : 40% ; 
