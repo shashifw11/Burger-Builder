@@ -11,7 +11,8 @@ const Burgernew = () => {
     const [price , setPrice] = useState(0) ; 
     const [quantity , setQuintity] = useState(0) ; 
     const [burgercount , setBurgerCount] = useState(0) ; 
-
+   const [date , setDate] = useState("")
+    const [time , setTime] = useState("") ; 
        console.log(burgercount) ; 
 
       const cost = {
@@ -41,6 +42,15 @@ const Burgernew = () => {
 
                  setPrice(TotalPrice)
        }
+
+    const orderPlace = ()=>{
+        window.alert("Order Placed"+  "  "+ "  " + "Price"+":"+price +" "+"₹"+"  "+ "Time" +":"+ time +"  "+"Date"+":"+date) ;
+        setLettuce(0) ; 
+        setCheese(0) ; 
+        setMeat(0) ;
+        setTomato(0) ; 
+        setBurgerCount(0) ;  
+    }
 
   const handleChange = (action , ingredient)=>{
         switch(ingredient){
@@ -116,7 +126,17 @@ const Burgernew = () => {
 useEffect(()=>{
     countItem()
     TotalCost() ; 
+    getDate() ; 
 },[lettuce , cheese , meat , tomato , burgercount]) 
+
+  const getDate =()=>{
+    var today = new Date();
+    var date = today.getDate() +'-'+ (today.getMonth()+1)+'-'+ today.getFullYear();
+    var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+
+    setDate(date)
+    setTime(time)
+  }
 
   const countItem = () =>{
      const totalCount = lettuce + cheese + meat + tomato
@@ -209,8 +229,8 @@ useEffect(()=>{
   <div className = "show-details">
     <div className = "details-box">
       <div className = "qan-box"> 
-         <p>Slide Quantity</p>
-         <p>{quantity}</p>
+         <p>Each Burger Slide Quantity</p>
+         <p style = {{fontSize : "18px"}}><span >{quantity}</span> <span>Pieces</span></p>
       </div>
       <button  className = "qan-box">
       <p >Burger Quantity</p>
@@ -219,7 +239,7 @@ useEffect(()=>{
             <span>Click</span>
             <span onClick={()=>changeBurgerCount(1)}>+</span>
     </div> 
-         <p>{burgercount}</p>
+         <p style = {{fontSize : "18px"}}>{burgercount}</p>
       </button>
       
     </div>
@@ -230,8 +250,18 @@ useEffect(()=>{
       </div>
     </div>
     <div className = "details-box">
-    <p>Order History</p>
-      <p></p>
+    {/* <p>Order History</p> */}
+        <div className = "order-time">
+          <p>
+            <p>Date</p>
+            <p>{date}</p>
+        </p>
+        <p>
+           <p>Time </p>
+           <p>{time}</p>
+        </p>
+        <button onClick={orderPlace}>order place</button>
+      </div>
     </div>
   </div>
   </div>
