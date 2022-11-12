@@ -148,9 +148,9 @@ useEffect(()=>{
   return (
     <>
        {/* <div className = "image"> */}
-    <div className = "logo">
+    {/* <div className = "logo">
       <img className = "img" src="https://th.bing.com/th/id/OIP.M93xWD4Gvp4xQRZXa8ceCAHaHa?pid=ImgDet&rs=1"/>
-    </div>
+    </div> */}
     
     {/* </div> */}
     
