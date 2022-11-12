@@ -44,12 +44,25 @@ const Burgernew = () => {
        }
 
     const orderPlace = ()=>{
-        window.alert("Order Placed"+  "  "+ "  " + "Price"+":"+price +" "+"₹"+"  "+ "Time" +":"+ time +"  "+"Date"+":"+date) ;
+      if(burgercount>0){
+        window.alert("Your Order Is Placed"+  "  "+ "  " + "Price"+":"+price +" "+"₹"+"  "+ "Time" +":"+ time +"  "+"Date"+":"+date) ;
         setLettuce(0) ; 
         setCheese(0) ; 
         setMeat(0) ;
         setTomato(0) ; 
         setBurgerCount(0) ;  
+      } else{
+        window.alert("Please Make Ready Your Burger first!")
+      }
+        
+    }
+
+    const clearAll = ()=>{
+      setLettuce(0) ; 
+      setCheese(0) ; 
+      setMeat(0) ;
+      setTomato(0) ; 
+      setBurgerCount(0) ;  
     }
 
   const handleChange = (action , ingredient)=>{
@@ -220,12 +233,10 @@ useEffect(()=>{
        <button onClick = {()=>handleChange("remove" , "meat")} className = "ingrbtn">Remove</button>
        <span className = "ingr-count">{meat}</span>
        <button onClick = {()=>handleChange("add" , "meat")} className = "ingrbtn">Add</button>
-
+       </div>
      </div>
-     </div>
-     {/* <button onClick={this.clearAll}>Clear All</button> */}
   </div>
-
+  
   <div className = "show-details">
     <div className = "details-box">
       <div className = "qan-box"> 
@@ -235,11 +246,11 @@ useEffect(()=>{
       <button  className = "qan-box">
       <p >Burger Quantity</p>
         <div className = "click">
-            <span onClick={()=>changeBurgerCount(-1)}>--</span>
+            <span style = {{fontSize : "30px"}}onClick={()=>changeBurgerCount(-1)}>-</span>
             <span>Click</span>
-            <span onClick={()=>changeBurgerCount(1)}>+</span>
+            <span style = {{fontSize : "20px"}} onClick={()=>changeBurgerCount(1)}>+</span>
     </div> 
-         <p style = {{fontSize : "18px"}}>{burgercount}</p>
+         <p style = {{fontSize : "18px"}}>{burgercount} Burger</p>
       </button>
       
     </div>
@@ -260,10 +271,12 @@ useEffect(()=>{
            <p>Time </p>
            <p>{time}</p>
         </p>
-        <button onClick={orderPlace}>order place</button>
+        <button onClick={orderPlace}>Order Place</button>
       </div>
     </div>
+    <button className = "clear-all" onClick={clearAll}>Clear All</button>
   </div>
+  
   </div>
     </>
   )

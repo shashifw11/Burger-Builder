@@ -223,6 +223,29 @@
     border-radius: 0 0 30px 30px;
   }
 
+
+
+
+  .clear-all{
+    width : 70% ;
+    padding: 10px;
+    margin: auto ; 
+    margin-top: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+    border: none;
+    background-color :lightskyblue ; 
+    font-weight: bold;
+    
+} 
+
+.clear-all:hover{
+   padding :13px ; 
+   width : 74% ; 
+   background-color :cornflowerblue; 
+   color: white;
+   font-weight: bold;
+}
   .qan-box{
      width : 40% ; 
      height : 80% ; 
