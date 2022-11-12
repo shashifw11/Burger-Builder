@@ -244,7 +244,7 @@ useEffect(()=>{
          <p style = {{fontSize : "18px"}}><span >{quantity}</span> <span>Pieces</span></p>
       </div>
       <button  className = "qan-box">
-      <p >Burger Quantity</p>
+      <p style = {{fontSize : "15px"}} >Burger Quantity</p>
         <div className = "click">
             <span style = {{fontSize : "30px"}}onClick={()=>changeBurgerCount(-1)}>-</span>
             <span>Click</span>
