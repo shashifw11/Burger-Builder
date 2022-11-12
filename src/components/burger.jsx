@@ -1,23 +1,25 @@
 import React , {Component} from 'react'
 import './burger.css'  ; 
 
+const metrial_price = {
+  lettuce : 5 , 
+  tomato : 2, 
+  cheese : 6, 
+  meat :  7 ,   
+
+}
+
+
 export default class Burger extends Component {
 state = {
   lettuce : 0 , 
   tomato : 0, 
   cheese : 0, 
   meat : 0 , 
+
 }
 
 
-
-
-totalPrice = ()=>{ 
-    console.log(this.state.lettuce) ; 
-
- let Price = this.state.lettuce + this.state.tomato + this.state.cheese + this.state.meat ; 
-      this.setPrice({[Price]:Price})
-}
 
 handleChange = (action,ingredient)=>{
     let {
